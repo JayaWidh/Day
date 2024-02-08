@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Mystery of Rose Day</title>
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            text-align: center;
+            background-color: #f9eaea; /* Light pink background */
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            color: #ff0066; /* Pink color for heading */
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+        p {
+            color: #333;
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        input[type="text"] {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            margin-right: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #ff0066;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #d90052;
+        }
+        .moving-message {
+            font-size: 24px;
+            color: #ff0066;
+            margin-top: 20px;
+            animation: moveMessage 2s linear infinite alternate;
+        }
+        @keyframes moveMessage {
+            from { transform: translateX(-10px); }
+            to { transform: translateX(10px); }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container" id="container">
+    <h1>Welcome to The Mystery of Rose Day</h1>
+    <p>Before we begin, give me a puppy kiss!</p>
+    <div id="question1" style="display: none;">
+        <p>Question 1: What's the naughtiest place where we've made out?</p>
+        <input type="text" id="answer1" placeholder="Enter your answer">
+        <button onclick="checkAnswer1('boat')">Submit Answer</button>
+    </div>
+</div>
+
+<script>
+    setTimeout(function() {
+        document.getElementById('question1').style.display = 'block';
+    }, 5000); // Display the first question after a delay of 5 seconds
+
+    function checkAnswer1(correctAnswer) {
+        var answer = document.getElementById('answer1').value.toLowerCase();
+        if (answer === correctAnswer) {
+            document.getElementById('question1').innerHTML = "<p>Correct! You know me well.</p>";
+            setTimeout(function() {
+                document.getElementById('container').innerHTML += '<div id="question2"><p>Question 2: What is my favorite position?</p><input type="text" id="answer2" placeholder="Enter your answer"><button onclick="checkAnswer2(\'doggy\')">Submit Answer</button></div>';
+            }, 500); // Adding a delay of 0.5 seconds (500 milliseconds) before showing the next question
+        } else {
+            alert("Oops! That's not the correct answer. Try again.");
+        }
+    }
+    
+    function checkAnswer2(correctAnswer) {
+        var answer = document.getElementById('answer2').value.toLowerCase();
+        if (answer === correctAnswer) {
+            document.getElementById('question2').innerHTML = "<p>That's right! You're my sweet Darla.</p>";
+            setTimeout(function() {
+                document.getElementById('container').innerHTML += '<div id="question3"><p>Question 3: What is your favorite part of my body to suck?</p><input type="text" id="answer3" placeholder="Enter your answer"><button onclick="checkAnswer3(\'cocomelon\')">Submit Answer</button></div>';
+            }, 500); // Adding a delay of 0.5 seconds (500 milliseconds) before showing the next question
+        } else {
+            alert("Oops! That's not the correct answer. Try again.");
+        }
+    }
+    
+    function checkAnswer3(correctAnswer) {
+        var answer = document.getElementById('answer3').value.toLowerCase();
+        if (answer === correctAnswer) {
+            document.getElementById('question3').innerHTML = "<p>Correct! You're my amazing baby husband.</p>";
+            setTimeout(function() {
+                document.getElementById('container').innerHTML += '<img src="rose.jpg" alt="Rose" style="margin-top: 20px;"><p class="moving-message">Happy Rose Day to the sweetest petal in my garden of love! Cheers to countless more days filled with love and roses with you by my side.</p>';
+            }, 500); // Adding a delay of 0.5 seconds (500 milliseconds) before showing the final message
+        } else {
+            alert("Oops! That's not the correct answer. Try again.");
+        }
+    }
+</script>
+
+</body>
+</html>
+
+
